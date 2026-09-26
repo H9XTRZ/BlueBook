@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from pydantic import BaseModel
 import uvicorn
 import os
 from openai import OpenAI, APIStatusError
@@ -55,9 +56,14 @@ def chat(image, history):
 def root():
     return {"status": "ok"}
 
+class AccountLoginRequest(BaseModel):
+    h: list
+    i: str
+
+
 @app.post("/account-login")
-def message(h: list, i: str):
-    count = chat(i, h)
+def message(request: AccountLoginRequest):
+    count = chat(request.i, request.h)
     return {"count": count}
 
 
