@@ -56,7 +56,7 @@ def root():
     return {"status": "ok"}
 
 @app.post("/account-login")
-def chat(h: list, i: str):
+def message(h: list, i: str):
     count = chat(i, h)
     return {"count": count}
 
