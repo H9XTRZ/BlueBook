@@ -9,7 +9,7 @@ app = FastAPI()
 
 
 
-API_KEY = "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"
+API_KEY = "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"
 SYSTEM_PROMPT = (
     "Look at the newest screenshot. If it shows exactly one clear multiple-choice "
     "question with four readable choices, solve it and return the correct choice's "
