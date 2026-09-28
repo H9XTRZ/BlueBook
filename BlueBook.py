@@ -8,7 +8,8 @@ import json
 app = FastAPI()
 
 
-
+import os
+API_KEY = os.getenv("OPENAI_API_KEY")
 API_KEY = "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"
 SYSTEM_PROMPT = (
     "Look at the newest screenshot. If it shows exactly one clear multiple-choice "
